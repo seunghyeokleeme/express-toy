@@ -3,7 +3,7 @@
 express router and middlewares
 
 - [x] express server
-- [ ] babel
+- [x] babel
 - [x] route
 - [ ] router
 - [ ] middlewares

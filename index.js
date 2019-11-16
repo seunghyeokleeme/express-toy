@@ -25,7 +25,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.get("/", handleHome);
+const handleMiddleware = (req, res, next) => {
+  console.log("I'm middlewares!");
+  return next();
+};
+
+app.get("/", handleMiddleware, handleHome);
 app.get("/category", handleCategory);
 app.get("/login", handleLogin);
 app.get("/signup", handleSignup);
